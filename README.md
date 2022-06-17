@@ -1,70 +1,151 @@
-# Getting Started with Create React App
+## Project Description 
+> I would like to build the front-end for a digital library using the Google Books API. Users can input keywords for books that will call the Google Books API and render data matching their search. They will be able to view their search results and then click on specific books to view more details. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Link to the API you plan to use
+> [API link](https://developers.google.com/books/docs/overview)
 
-## Available Scripts
+## Example data response you plan to use
+<img width="1001" alt="Screen Shot 2022-06-13 at 10 16 04 PM" src="https://user-images.githubusercontent.com/104743186/173974196-9c738b00-6019-476f-be25-136b7ffbb1b4.png">
 
-In the project directory, you can run:
+```json
+{
+"kind": "books#volume",
+      "id": "LUmQDwAAQBAJ",
+      "etag": "J23+o85BroM",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/LUmQDwAAQBAJ",
+      "volumeInfo": {
+        "title": "House of Earth and Blood",
+        "authors": [
+          "Sarah J. Maas"
+        ],
+        "publisher": "Bloomsbury Publishing USA",
+        "publishedDate": "2020-03-03",
+        "description": "A #1 New York Times bestseller! Sarah J. Maas's brand-new CRESCENT CITY series begins with House of Earth and Blood: the story of half-Fae and half-human Bryce Quinlan as she seeks revenge in a contemporary fantasy world of magic, danger, and searing romance. Bryce Quinlan had the perfect life-working hard all day and partying all night-until a demon murdered her closest friends, leaving her bereft, wounded, and alone. When the accused is behind bars but the crimes start up again, Bryce finds herself at the heart of the investigation. She'll do whatever it takes to avenge their deaths. Hunt Athalar is a notorious Fallen angel, now enslaved to the Archangels he once attempted to overthrow. His brutal skills and incredible strength have been set to one purpose-to assassinate his boss's enemies, no questions asked. But with a demon wreaking havoc in the city, he's offered an irresistible deal: help Bryce find the murderer, and his freedom will be within reach. As Bryce and Hunt dig deep into Crescent City's underbelly, they discover a dark power that threatens everything and everyone they hold dear, and they find, in each other, a blazing passion-one that could set them both free, if they'd only let it. With unforgettable characters, sizzling romance, and page-turning suspense, this richly inventive new fantasy series by #1 New York Times bestselling author Sarah J. Maas delves into the heartache of loss, the price of freedom-and the power of love.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781635574050"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1635574056"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 648,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "averageRating": 4,
+        "ratingsCount": 18,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.8.7.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=LUmQDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=LUmQDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.ca/books?id=LUmQDwAAQBAJ&pg=PP1&dq=crescent+city&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=LUmQDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=LUmQDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "CA",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 19.6,
+          "currencyCode": "CAD"
+        },
+        "retailPrice": {
+          "amount": 10.72,
+          "currencyCode": "CAD"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=LUmQDwAAQBAJ&rdid=book-LUmQDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 19600000,
+              "currencyCode": "CAD"
+            },
+            "retailPrice": {
+              "amountInMicros": 10720000,
+              "currencyCode": "CAD"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "CA",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.ca/books/download/House_of_Earth_and_Blood-sample-epub.acsm?id=LUmQDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.ca/books/download/House_of_Earth_and_Blood-sample-pdf.acsm?id=LUmQDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=LUmQDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Sarah J. Maas&#39;s brand-new CRESCENT CITY series begins with House of Earth and Blood: the story of half-Fae and half-human Bryce Quinlan as she seeks revenge in a contemporary fantasy world of magic, danger, and searing romance."
+      }
+```
 
-### `npm start`
+## Visual of your component hierarchy
+>
+<img width="756" alt="Screen Shot 2022-06-16 at 10 14 35 PM" src="https://user-images.githubusercontent.com/104743186/174211350-17355128-73b5-4b7a-ac9d-1d53677a1f17.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Wire Frames
+> 
+Homepage
+<img width="745" alt="Screen Shot 2022-06-16 at 9 53 51 PM" src="https://user-images.githubusercontent.com/104743186/174207048-0c109b37-6d5a-4342-bc48-45c91bddff76.png">
 
-### `npm test`
+Search Page
+<img width="745" alt="Screen Shot 2022-06-16 at 9 54 20 PM" src="https://user-images.githubusercontent.com/104743186/174207012-c95c1b68-2e7a-434e-bab3-e0fe9d3275bb.png">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Book Details
+<img width="745" alt="Screen Shot 2022-06-16 at 9 59 12 PM" src="https://user-images.githubusercontent.com/104743186/174207393-f0cfbea1-e889-4308-893e-fd506e9df489.png">
 
-### `npm run build`
+Discovery Page (upon clicking 'recommend' will display book details page for recommended book)
+<img width="745" alt="Screen Shot 2022-06-16 at 9 54 49 PM" src="https://user-images.githubusercontent.com/104743186/174207068-ec002b83-46a9-4c2f-a503-4a3fee627f8e.png">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## User Stories
+> As a user...
+- I want to have books rendered based on my search keywords... so that I am shown books that are relevant to what I am looking for
+- I want to be able to search for books using author names, genres, or title keywords.... so that I have multiple avenues to find different books 
+- I want the ability to select a specific book and be shown further details on that book... so that I can learn more about the books I am interested in
+- I want the ability to be shown books based on their similarity to other books... so that I can find new books I may be interested in reading
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### MVP Goals
+- Upon loading, search results will display books based on randomly generated search
+- If the search tab is clicked the page will display a search bar that can take user input and update displayed book results
+- Infinite scroll feature that will continue to display further results as the user scrolls down
+- If author name is clicked on will generate new search results based on the author
+- Book details page will open when a book image or title is clicked on
+- Book details page will display book image (if one exists), title, and author(s), genres, and descriptions
+- If the discovery tab is clicked the page will display three slots that user can add books to from their search results
+- If the user clicks 'recommend' the page will open to the book details page of recommended book
+- Recommendation is made based on similarity to the books added to the discover slots
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Stretch Goals
+- Create a database to store user information for the purpose of allowing users to add books to their library
