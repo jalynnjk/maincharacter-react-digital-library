@@ -8,8 +8,6 @@ function SearchResults({ searchInput }) {
 	function getBookData() {
 		const url = `https://www.googleapis.com/books/v1/volumes?q=${searchInput.searchBy}${searchInput.searchValue}&maxResults=40&key=${process.env.REACT_APP_API_KEY}
         `;
-        console.log(url)
-		console.log(url);
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
@@ -25,7 +23,7 @@ function SearchResults({ searchInput }) {
 		    <div>
 		    	{books.map((book, index) => {
 		    		return (
-							<Link to={`/details/${book.volumeInfo.title}`} key={index}>
+							<Link to={`/details/${book.id}`} key={index}>
 								<div className='bookContainer'>
 									<div className='image-container'>
 										{book.volumeInfo.imageLinks ? (
