@@ -42,7 +42,7 @@ function SearchBar(props) {
 				/>
 				<button id='search-btn'>Search</button>
 			</form>
-			<SearchResults searchInput={searchInput} />
+			<SearchResults searchInput={searchInput} setSearchInput={setSearchInput}/>
 		</div>
 	);
 }

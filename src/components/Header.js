@@ -10,7 +10,7 @@ function Header(props) {
 			<Link to='/search'>
                 <h2 className='search-link'>Search</h2>
             </Link>
-			<h2 className='discover-link'>Discover</h2>
+            <h2 className='discover-link'>Discover</h2>
 		</div>
 	);
 }

@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import BookDetails from './components/BookDetails';
+import Discover from './components/Discover';
 import {Routes, Route, Link} from 'react-router-dom'
 
 function App() {
