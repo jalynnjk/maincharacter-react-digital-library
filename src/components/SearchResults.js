@@ -6,7 +6,7 @@ import Discover from './Discover';
 
 function SearchResults({ searchInput, setSearchInput }) {
 	const [books, setBooks] = useState([]);
-    const [authorSearch, setAuthorSearch] = useState({})
+    const [selectedBooks, setSelectedBooks] = useState([])
 	function getBookData() {
 		const url = `https://www.googleapis.com/books/v1/volumes?q=${searchInput.searchBy}${searchInput.searchValue}&maxResults=40&key=${process.env.REACT_APP_API_KEY}
         `;
@@ -24,7 +24,7 @@ function SearchResults({ searchInput, setSearchInput }) {
 
 	return (
 		<div>
-			<Discover bookData={books} />
+			<Discover selectedBooks={selectedBooks} />
 			{books.map((book, index) => {
 				return (
 					<div className='bookContainer' key={index}>
@@ -37,7 +37,8 @@ function SearchResults({ searchInput, setSearchInput }) {
 								)}
 							</div>
 						</Link>
-						<div className='book-info'>
+						<button onClick={() => setSelectedBooks([...selectedBooks, book])}>+</button>
+                        <div className='book-info'>
 							<Link to={`/details/${book.id}`}>
 								<h3>{book.volumeInfo.title}</h3>
 							</Link>
