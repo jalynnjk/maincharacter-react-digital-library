@@ -16,6 +16,11 @@ function BookDetails(props) {
 			})
 			.catch(console.error);
 	}, []);
+
+    function createMarkup(html) {
+        return {__html: html}
+    }
+
 	return (
 		<div>
 			{bookData.title ? (
@@ -27,7 +32,7 @@ function BookDetails(props) {
 					) : (
 						<h2>Author Unknown</h2>
 					)}
-					{bookData.description}
+					<div dangerouslySetInnerHTML={createMarkup(bookData.description)}></div>
 				</div>
 			) : (
 				<h2>Book details loading...</h2>

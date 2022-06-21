@@ -14,7 +14,7 @@ function SearchBar(props) {
 		setSearchInput(formState);
 	}
 	return (
-		<div>
+		<div className='search-container'>
 			<form className='searchbar' onSubmit={handleSubmit}>
 				<select
 					id='searchBy'

@@ -5,7 +5,7 @@ body {
 .header-grid-template {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 2fr repeat(3, 1fr);
+  grid-template-columns: 1.75fr repeat(3, 1fr);
   border-bottom: solid 1px gray;
 }
 .h1 {
@@ -21,37 +21,39 @@ body {
   padding-top: 5px;
 }
 .search-link {
-  grid-column: 3;
-  grid-row: 1;
-  font-size: 15px;
-  padding-top: 5px;
-}
-.discover-link {
   grid-column: 4;
   grid-row: 1;
+}
+.search-text {
   font-size: 15px;
   padding-top: 5px;
 }
+.searchbar {
+  margin-top: 10px;
+}
 .discover-container {
-  margin-bottom: 50px;
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid black;
+  padding-bottom: 15px;
 }
 .selected-book-list-container {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
 }
 .selected-book-container {
   display: flex;
   flex-wrap: wrap;
-  width: 150px;
+  width: 125px;
   text-align: center;
   font-size: 10px;
 }
 .selected-book-img {
-  width: 150px;
+  width: 125px;
+  max-height: 190px;
 }
 .selected-book-title {
-  width: 150px;
+  width: 125px;
 }

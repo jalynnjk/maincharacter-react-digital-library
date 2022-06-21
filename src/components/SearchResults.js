@@ -5,6 +5,7 @@ import { Link, Route } from 'react-router-dom';
 import Discover from './Discover';
 
 function SearchResults({ searchInput, setSearchInput }) {
+    //Custom hook setBooks fetch
 	const [books, setBooks] = useState([]);
     const [selectedBooks, setSelectedBooks] = useState([])
 	function getBookData() {
@@ -13,7 +14,6 @@ function SearchResults({ searchInput, setSearchInput }) {
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
-				console.log(res.items);
 				setBooks(res.items);
 			})
 			.catch(console.error);
@@ -21,23 +21,25 @@ function SearchResults({ searchInput, setSearchInput }) {
 	useEffect(() => {
 		getBookData();
 	}, [searchInput]);
-
+    //searchInput, pass into dependency array pass as argument to custom hook
 	return (
-		<div>
+		<div className='search-results-container'>
 			<Discover selectedBooks={selectedBooks} />
 			{books.map((book, index) => {
 				return (
 					<div className='bookContainer' key={index}>
-						<Link to={`/details/${book.id}`}>
+						<Link className='search-image-link' to={`/details/${book.id}`}>
 							<div className='image-container'>
 								{book.volumeInfo.imageLinks ? (
-									<img src={book.volumeInfo.imageLinks.smallThumbnail} alt='' />
+									<img className='search-result-image' src={book.volumeInfo.imageLinks.smallThumbnail} alt='' />
 								) : (
 									<h4>No Image</h4>
 								)}
 							</div>
 						</Link>
-						<button onClick={() => setSelectedBooks([...selectedBooks, book])}>+</button>
+						<button onClick={() => {
+                            return selectedBooks.length < 3 ? setSelectedBooks([...selectedBooks, book]) : null}
+                    }>+</button>
                         <div className='book-info'>
 							<Link to={`/details/${book.id}`}>
 								<h3>{book.volumeInfo.title}</h3>
