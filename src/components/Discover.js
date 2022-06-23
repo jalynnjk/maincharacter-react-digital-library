@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
-import BookRecommendation from './BookRecommendation';
+import { Link } from 'react-router-dom';
 
 function Discover({ selectedBooks }) {
     const [discoverGenres, setDiscoverGenres] = useState([])
