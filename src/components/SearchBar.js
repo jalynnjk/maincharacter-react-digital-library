@@ -1,20 +1,29 @@
 import React from 'react';
 import { useState } from 'react';
+import QuickSearch from './QuickSearch';
 import SearchResults from './SearchResults';
 
 function SearchBar(props) {
 	const [searchInput, setSearchInput] = useState({
 		searchBy: 'subject:',
-		searchValue: 'fantasy',
+		searchValue: ['Fiction'],
 	});
-	const [formState, setFormState] = useState({ searchBy: 'title:', searchValue: '' });
+	const [formState, setFormState] = useState({
+		searchBy: 'title:',
+		searchValue: [''],
+	});
 
 	function handleSubmit(event) {
 		event.preventDefault();
 		setSearchInput(formState);
+		setFormState({...formState, searchValue:['']})
 	}
+
 	return (
 		<div className='search-container'>
+			<QuickSearch 
+			searchInput={searchInput} setSearchInput={setSearchInput} />
+
 			<form className='searchbar' onSubmit={handleSubmit}>
 				<select
 					id='searchBy'
@@ -22,7 +31,7 @@ function SearchBar(props) {
 					onChange={(event) => {
 						setFormState({
 							...formState,
-							[event.target.id]: event.target.value,
+							[event.target.id]: [event.target.value],
 						});
 					}}>
 					<option value='title:'>Title</option>
@@ -36,13 +45,17 @@ function SearchBar(props) {
 					onChange={(event) => {
 						setFormState({
 							...formState,
-							[event.target.id]: event.target.value,
+							[event.target.id]: [event.target.value],
 						});
 					}}
 				/>
 				<button id='search-btn'>Search</button>
 			</form>
-			<SearchResults searchInput={searchInput} setSearchInput={setSearchInput}/>
+			<h4>{searchInput.searchValue.join(' | ')}</h4>
+			<SearchResults
+				searchInput={searchInput}
+				setSearchInput={setSearchInput}
+			/>
 		</div>
 	);
 }
