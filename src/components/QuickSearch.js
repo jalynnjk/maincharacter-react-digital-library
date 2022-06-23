@@ -28,7 +28,7 @@ function QuickSearch({ searchInput, setSearchInput }) {
 	return (
 		<div>
 			<nav className='search-links'>
-				<DropdownButton title='Fiction'>
+				<DropdownButton title='Fiction' className='fiction-dd'>
 					{fictionSubjects.map((subject, index) => {
 						return (
 							<Dropdown.Item key={index}

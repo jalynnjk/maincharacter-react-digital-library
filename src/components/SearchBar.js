@@ -41,6 +41,7 @@ function SearchBar(props) {
 				<input
 					type='text'
 					id='searchValue'
+					placeholder='Search'
 					value={formState.searchValue}
 					onChange={(event) => {
 						setFormState({

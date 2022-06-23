@@ -13,7 +13,6 @@ function BookRecommendation(props) {
 			.then((res) => res.json())
 			.then((res) => {
 				const randomBookIndex = Math.floor(Math.random() * res.items.length);
-				console.log(res.items[randomBookIndex]);
 				setRecommendation(res.items[randomBookIndex]);
 			})
 			.catch(console.error);
