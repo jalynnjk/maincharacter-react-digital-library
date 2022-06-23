@@ -5,20 +5,25 @@ function QuickSearch({ searchInput, setSearchInput }) {
 	const fictionSubjects = [
         'Fiction',
 		'Fantasy',
+        'Adventure',
 		'Romance',
+        'Dystopian',
 		'Contemporary',
+        'Paranormal',
 		'Mystery',
 		'Science Fiction',
 		'Horror',
 	];
 	const nonfictionSubjects = [
-        'Nonfiction',
+		'Nonfiction',
 		'Biographies',
-		'Psychology',
 		'Health',
 		'Diet',
-		'Cook Book',
-		'Politics',
+		'Cooking',
+		'Psychology',
+		'Science',
+		'Political Science',
+        'History'
 	];
 	return (
 		<div>
@@ -55,6 +60,7 @@ function QuickSearch({ searchInput, setSearchInput }) {
 						);
 					})}
 				</DropdownButton>
+                
 			</nav>
 		</div>
 	);
