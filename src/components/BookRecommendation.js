@@ -19,17 +19,26 @@ function BookRecommendation(props) {
 			.catch(console.error);
 	}, []);
 
+	function createMarkup(html) {
+		return { __html: html };
+	}
+
 	return (
 		<div className='book-rec-container'>
-			{/* {recommendation === [] ? (
-				<h2>Book loading...</h2>
-			) : (
+			{recommendation.volumeInfo ? (
 				<div>
+                    {recommendation.volumeInfo.imageLinks.smallThumbnail ? (<img src={recommendation.volumeInfo.imageLinks.smallThumbnail} alt="" />) : (<h4>No Image</h4>)}
+
 					<h2>{recommendation.volumeInfo.title}</h2>
 					<h3>{recommendation.volumeInfo.authors.join(', ')}</h3>
-					<p>{recommendation.volumeInfo.description}</p>
+					<div
+						dangerouslySetInnerHTML={createMarkup(
+							recommendation.volumeInfo.description
+						)}></div>
 				</div>
-			)} */}
+			) : (
+				<h2>Book loading...</h2>
+			)}
 		</div>
 	);
 }
