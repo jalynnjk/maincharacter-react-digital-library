@@ -10,8 +10,7 @@ function BookDetails(props) {
 		console.log(url);
 		fetch(url)
 			.then((res) => res.json())
-			.then((res) => {
-				console.log(res.volumeInfo);
+			.then((res) => {;
 				setBookData(res.volumeInfo);
 			})
 			.catch(console.error);
