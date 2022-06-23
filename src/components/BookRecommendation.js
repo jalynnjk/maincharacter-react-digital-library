@@ -1,29 +1,37 @@
-import {useParams} from 'react-router-dom'
-import { useEffect } from 'react'
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 function BookRecommendation(props) {
-	// function pickGenre() {
-	// 	let randomIndex = Math.floor(Math.random() * 3);
-	// 	setDiscoverGenres(discoverGenres[randomIndex]);
-	// 	console.log(discoverGenres[randomIndex]);
-	// }
-    const { discoverGenres } = useParams()
-    useEffect(() => {
-            console.log(discoverGenres)
-		// 	const url = `https://www.googleapis.com/books/v1/volumes?q=subject${discoverGenres}&maxResults=40&key=${process.env.REACT_APP_API_KEY}
-        // `
-		// 	console.log(url);
-		// 	fetch(url)
-		// 		.then((res) => res.json())
-		// 		.then((res) => {
-		// 			console.log(res.volumeInfo);
-		// 		})
-		// 		.catch(console.error);
-		}, []);
+	const [recommendation, setRecommendation] = useState([]);
+	const { discoverGenres } = useParams();
+	useEffect(() => {
+		let genresArray = discoverGenres.split(',');
+		const randomGenreIndex = Math.floor(Math.random() * genresArray.length);
+		const url = `https://www.googleapis.com/books/v1/volumes?q=subject:${genresArray[randomGenreIndex]}&maxResults=40&key=${process.env.REACT_APP_API_KEY}
+        `;
+		fetch(url)
+			.then((res) => res.json())
+			.then((res) => {
+				const randomBookIndex = Math.floor(Math.random() * res.items.length);
+				console.log(res.items[randomBookIndex]);
+				setRecommendation(res.items[randomBookIndex]);
+			})
+			.catch(console.error);
+	}, []);
 
-	return <div>
-        hi from BookRecommendation
-    </div>;
+	return (
+		<div className='book-rec-container'>
+			{/* {recommendation === [] ? (
+				<h2>Book loading...</h2>
+			) : (
+				<div>
+					<h2>{recommendation.volumeInfo.title}</h2>
+					<h3>{recommendation.volumeInfo.authors.join(', ')}</h3>
+					<p>{recommendation.volumeInfo.description}</p>
+				</div>
+			)} */}
+		</div>
+	);
 }
 
 export default BookRecommendation;

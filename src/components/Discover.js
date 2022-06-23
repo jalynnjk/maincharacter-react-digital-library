@@ -31,7 +31,7 @@ function Discover({ selectedBooks }) {
 				})}
 			</div>
 			{selectedBooks.length ? (
-				<Link to={`/book-recommendation/:${discoverGenres}`}>
+				<Link to={`/book-recommendation/${discoverGenres}`}>
 					<button>Recommend</button>
 				</Link>
 			) : null}
