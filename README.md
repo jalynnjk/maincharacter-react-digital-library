@@ -1,5 +1,9 @@
 ## Project Description 
-> I would like to build the front-end for a digital library using the Google Books API. Users can input keywords for books that will call the Google Books API and render data matching their search. They will be able to view their search results and then click on specific books to view more details. 
+> I would like to build the front-end for a digital library using the Google Books API. Users can input keywords for books that will call the Google Books API and render data matching their search. They will be able to view their search results and then click on specific books to view more details. The purpose of the application is to allow the user to navigate the google books API and use it to discover new and interesting books to read. 
+
+## Application Link
+> [Main Character React Application](https://maincharacter-digital-library.netlify.app/)
+## Application Screenshot
 
 ## Technologies
 > Include: HTML, CSS, JavaScript, React, React Router, React Bootstrap
