@@ -251,7 +251,7 @@ h1 {
   }
   .selected-book-list-container {
     width: 100%;
-    gap: 10%;
+    gap: 5%;
     display: flex;
     justify-content: center;
   }
