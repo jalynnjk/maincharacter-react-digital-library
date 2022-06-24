@@ -52,7 +52,7 @@ function SearchBar(props) {
 				/>
 				<button id='search-btn'>Search</button>
 			</form>
-			<h4>{searchInput.searchValue.join(' | ')}</h4>
+			<h4>| {searchInput.searchValue.join(' | ')} |</h4>
 			<SearchResults
 				searchInput={searchInput}
 				setSearchInput={setSearchInput}

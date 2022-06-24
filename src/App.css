@@ -24,6 +24,9 @@ body {
   color: black;
   padding-top: 8px;
 }
+.home-link:Hover {
+  color: #6d6875;
+}
 h1 {
     font-size: 18px;
     font-family: 'Sunroll';
@@ -36,7 +39,104 @@ h1 {
 .search-links{
   display: flex;
 }
-.fiction-dd {
-  justify-content: right;
+#fiction-dd {
+  background-color: white;
   color: black;
+  border: none;
+  font-family: 'Sunroll';
+  margin-right: 5px;
+}
+#nonfiction-dd{
+  background-color: white;
+  color: black;
+  font-family: 'Sunroll';
+  border: none;
+}
+.searchbar {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+#searchBy {
+  height: 30px;
+  border: none;
+  font-family: 'times-new-roman';
+}
+#searchValue {
+  border: none;
+  border-bottom: .5px #6d6875 solid;
+  font-family: 'times-new-roman';
+}
+#search-btn {
+  border: none;
+  background-color: white;
+  font-family: 'times-new-roman';
+}
+.search-result-container {
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-bottom: #edede9 1px solid;
+  border-top: #edede9 1px solid;
+  padding: 5px;
+  height: 200px;
+}
+.card-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 2fr .5fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.sr-img  {
+  border-radius: 5%;
+}
+.sr-body {
+  margin-top: 5%;
+  grid-column: 3;
+  padding: 10px;
+}
+.add-button {
+  border: none;
+  background-color: white;
+  font-size: 30px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  margin-bottom: 5px;
+  grid-row: 1;
+}
+.title-link {
+  text-decoration: none;
+  color: black;
+  grid-row: 2;
+}
+.sr-title {
+  font-size: 20px;
+  font-style: italic;
+  font-family: 'Times New Roman';
+  color: black;
+}
+.sr-subtitle {
+  grid-row: 3;
+}
+.authors {
+  font-size: 15px;
+  color: #6d6875;
+}
+.selected-book-list-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.selected-book-img {
+  height: 190px;
+  border-radius: 5px;
+}
+.recommend-button {
+  background-color: #edede9;
+  color: black;
+  font-family: 'Sunroll';
+  border: black 1px solid;
+  border-radius: 5%;
 }

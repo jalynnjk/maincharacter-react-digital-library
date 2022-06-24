@@ -28,7 +28,7 @@ function QuickSearch({ searchInput, setSearchInput }) {
 	return (
 		<div>
 			<nav className='search-links'>
-				<DropdownButton title='Fiction' className='fiction-dd'>
+				<DropdownButton title='Fiction' id='fiction-dd'>
 					{fictionSubjects.map((subject, index) => {
 						return (
 							<Dropdown.Item key={index}
@@ -44,7 +44,7 @@ function QuickSearch({ searchInput, setSearchInput }) {
 						);
 					})}
 				</DropdownButton>
-				<DropdownButton title='Nonfiction'>
+				<DropdownButton title='Nonfiction' id='nonfiction-dd'>
 					{nonfictionSubjects.map((subject, index) => {
 						return (
 							<Dropdown.Item key={index}
