@@ -3,7 +3,9 @@
 
 ## Application Link
 > [Main Character React Application](https://maincharacter-digital-library.netlify.app/)
+
 ## Application Screenshot
+> <img width="414" alt="Screen Shot 2022-06-24 at 12 54 00 AM" src="https://user-images.githubusercontent.com/104743186/175465115-f28f2e71-1592-4b43-b388-cd19e584855e.png">
 
 ## Technologies
 > Include: HTML, CSS, JavaScript, React, React Router, React Bootstrap
@@ -121,11 +123,6 @@
         "textSnippet": "Sarah J. Maas&#39;s brand-new CRESCENT CITY series begins with House of Earth and Blood: the story of half-Fae and half-human Bryce Quinlan as she seeks revenge in a contemporary fantasy world of magic, danger, and searing romance."
       }
 ```
-
-## Visual of your component hierarchy
->
-<img width="756" alt="Screen Shot 2022-06-16 at 10 14 35 PM" src="https://user-images.githubusercontent.com/104743186/174211350-17355128-73b5-4b7a-ac9d-1d53677a1f17.png">
-
 
 ## Wire Frames
 > 

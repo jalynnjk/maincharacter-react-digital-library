@@ -16,13 +16,12 @@ function SearchBar(props) {
 	function handleSubmit(event) {
 		event.preventDefault();
 		setSearchInput(formState);
-		setFormState({...formState, searchValue:['']})
+		setFormState({ ...formState, searchValue: [''] });
 	}
 
 	return (
 		<div className='search-container'>
-			<QuickSearch 
-			searchInput={searchInput} setSearchInput={setSearchInput} />
+			<QuickSearch searchInput={searchInput} setSearchInput={setSearchInput} />
 
 			<form className='searchbar' onSubmit={handleSubmit}>
 				<select

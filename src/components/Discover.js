@@ -2,14 +2,20 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function Discover({ selectedBooks }) {
-    const [discoverGenres, setDiscoverGenres] = useState([])
-    useEffect(() => {
-        if (selectedBooks.length >= 1){
-        selectedBooks.map((selectedBook) => {	
-            setDiscoverGenres([...discoverGenres, ...selectedBook.volumeInfo.categories])
-			})}
-    }, [selectedBooks])
+function Discover({ selectedBooks, setSelectedBooks }) {
+	const [discoverGenres, setDiscoverGenres] = useState([]);
+	useEffect(() => {
+		if (selectedBooks.length >= 1) {
+			selectedBooks.map((selectedBook) => {
+				selectedBook.volumeInfo.categories == undefined
+					? setDiscoverGenres(discoverGenres)
+					: setDiscoverGenres([
+							...discoverGenres,
+							...selectedBook.volumeInfo.categories,
+					  ]);
+			});
+		}
+	}, [selectedBooks]);
 
 	return (
 		<div className='discover-container'>
@@ -27,7 +33,7 @@ function Discover({ selectedBooks }) {
 				})}
 			</div>
 			{selectedBooks.length ? (
-				<Link to={`/book-recommendation/${discoverGenres}`}>
+				<Link className='recommend-link' to={`/book-recommendation/${discoverGenres}`}>
 					<button className='recommend-button'>disCOver</button>
 				</Link>
 			) : null}

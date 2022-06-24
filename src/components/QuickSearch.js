@@ -3,13 +3,13 @@ import { Dropdown } from 'react-bootstrap';
 
 function QuickSearch({ searchInput, setSearchInput }) {
 	const fictionSubjects = [
-        'Fiction',
+		'Fiction',
 		'Fantasy',
-        'Adventure',
+		'Adventure',
 		'Romance',
-        'Dystopian',
+		'Dystopian',
 		'Contemporary',
-        'Paranormal',
+		'Paranormal',
 		'Mystery',
 		'Science Fiction',
 		'Horror',
@@ -23,7 +23,7 @@ function QuickSearch({ searchInput, setSearchInput }) {
 		'Psychology',
 		'Science',
 		'Political Science',
-        'History'
+		'History',
 	];
 	return (
 		<div>
@@ -31,7 +31,8 @@ function QuickSearch({ searchInput, setSearchInput }) {
 				<DropdownButton title='Fiction' id='fiction-dd'>
 					{fictionSubjects.map((subject, index) => {
 						return (
-							<Dropdown.Item key={index}
+							<Dropdown.Item
+								key={index}
 								as='button'
 								onClick={() =>
 									setSearchInput({
@@ -47,7 +48,8 @@ function QuickSearch({ searchInput, setSearchInput }) {
 				<DropdownButton title='Nonfiction' id='nonfiction-dd'>
 					{nonfictionSubjects.map((subject, index) => {
 						return (
-							<Dropdown.Item key={index}
+							<Dropdown.Item
+								key={index}
 								as='button'
 								onClick={() =>
 									setSearchInput({
@@ -60,7 +62,6 @@ function QuickSearch({ searchInput, setSearchInput }) {
 						);
 					})}
 				</DropdownButton>
-                
 			</nav>
 		</div>
 	);

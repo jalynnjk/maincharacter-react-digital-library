@@ -5,6 +5,11 @@
   font-weight: normal;
   src: url('./assets/Sunroll.ttf')
 }
+@media screen and (max-width:600px) {
+  .selected-book-img {
+    max-width: 125px;
+  }
+}
 body {
   font-family: 'Times New Roman';
   text-align: center;
@@ -19,17 +24,15 @@ body {
 .home-link {
   grid-column: 1;
   grid-row: 1;
-  text-align: center;
+  text-align: right;
   text-decoration: none;
   color: black;
   padding-top: 8px;
-}
-.home-link:Hover {
-  color: #6d6875;
+  margin-right: 10px;
 }
 h1 {
-    font-size: 18px;
-    font-family: 'Sunroll';
+  font-size: 18px;
+  font-family: 'Sunroll';
 }
 .openbook-logo {
   grid-column: 2;
@@ -53,7 +56,7 @@ h1 {
   border: none;
 }
 .searchbar {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   margin-top: 10px;
 }
 #searchBy {
@@ -71,6 +74,9 @@ h1 {
   background-color: white;
   font-family: 'times-new-roman';
 }
+.selected-book-list-container {
+  margin-top: 25px;
+}
 .search-result-container {
   display: flex;
   margin-bottom: 10px;
@@ -78,16 +84,20 @@ h1 {
   border-bottom: #edede9 1px solid;
   border-top: #edede9 1px solid;
   padding: 5px;
-  height: 200px;
+  height: 225px;
 }
 .card-container {
   display: grid;
   width: 100%;
-  grid-template-columns: 2fr .5fr 2fr;
+  grid-template-columns: 2fr 2fr;
   grid-template-rows: 1fr 1fr 1fr;
+  margin-top: 10px;
+  padding-right: 10%;
+  padding-left: 10%;
 }
 .sr-img  {
   border-radius: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
 }
 .sr-body {
   margin-top: 5%;
@@ -132,6 +142,7 @@ h1 {
 .selected-book-img {
   height: 190px;
   border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
 }
 .recommend-button {
   background-color: #edede9;
@@ -139,4 +150,112 @@ h1 {
   font-family: 'Sunroll';
   border: black 1px solid;
   border-radius: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-basis: 100%;
+  width: 125px;
+  font-size: 18px;
+}
+.details-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'times new roman';
+  width: 100%;
+  justify-content: center;
+}
+.return-button {
+  border: none;
+  background-color: white;
+  color: #6d6875;
+  font-family: 'times-new-roman';
+  font-size: 15px;
+  border-left: 1px solid #6d6875;
+  border-right: 1px solid #6d6875;
+  margin: 5px;
+  padding: 0px 5px 0px 5px;
+}
+.return-link {
+  flex-basis: 100%;
+  text-align: left;
+}
+.book-details {
+  margin: 15px;
+  max-width: 600px;
+  padding: 20px;
+}
+.book-image {
+  border-radius: 5%;
+  height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.book-title {
+  font-family: 'times new roman';
+  font-style: italic;
+}
+.book-titles-container {
+  margin: 10px;
+  border-top: 1px solid #edede9;
+  border-bottom: 1px solid #edede9;
+  padding: 10px;
+}
+
+@media screen and (min-width: 600px){
+  .header-grid-template {
+    grid-template-columns: .45fr 1fr;
+  }
+  .home-link {
+    text-align: right;
+  }
+  .home-link:Hover {
+    color: #6d6875;
+  }
+  h1 {
+    font-size: 18px;
+    margin-top: 2px;
+  }
+  .openbook-logo {
+    height: 40px;
+  }
+  .searchbar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .discover-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .search-result-container {
+    flex-basis: 30%;
+    height: 400px;
+    width: 100%;
+    justify-content: center;
+  }
+  .card-container {
+    display: flex;
+    max-width: none;
+    flex-basis: 25%;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .sr-body {
+    margin-top: 0px;
+  }
+  .recommend-link {
+    flex-basis: 100%;
+  }
+  .selected-book-list-container {
+    gap: 20%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header-grid-template {
+      grid-template-columns: .25fr 1fr;
+    }
+  h1 {
+      font-size: 25px;
+    }
+  .openbook-logo {
+      margin-top: 2px;
+    }
 }

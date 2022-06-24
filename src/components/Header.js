@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../assets/spellbook.png';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function Header(props) {
 	return (
