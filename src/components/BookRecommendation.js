@@ -8,12 +8,13 @@ function BookRecommendation(props) {
 	useEffect(() => {
 		let genresArray = discoverGenres.split(',');
 		const randomGenreIndex = Math.floor(Math.random() * genresArray.length);
-		const url = `https://www.googleapis.com/books/v1/volumes?q=subject:${genresArray[randomGenreIndex]}&maxResults=4&key=${process.env.REACT_APP_API_KEY}`
+		const url = `https://www.googleapis.com/books/v1/volumes?q=subject:${genresArray[randomGenreIndex]}&maxResults=40`;
+		// &key=${process.env.REACT_APP_API_KEY}`
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
 				const randomBookIndex = Math.floor(
-					Math.random() * (res.items.length - 1)
+					Math.random() * (res.items.length)
 				);
 				setRecommendation(res.items[randomBookIndex].volumeInfo);
 			})
@@ -31,11 +32,12 @@ function BookRecommendation(props) {
 			</Link>
 			{recommendation.title ? (
 				<div className='book-details'>
-					<img
+					{recommendation.imageLinks ?
+                        (<img
 						className='book-image'
 						src={recommendation.imageLinks.smallThumbnail}
 						alt='Book Cover'
-					/>
+					/>) : (<h4>No Image</h4>)}
 					<div className='book-titles-container'>
 						<h2 className='book-title'>{recommendation.title}</h2>
 						{recommendation.authors ? (
