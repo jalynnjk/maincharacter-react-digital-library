@@ -159,3 +159,4 @@ Discovery Page (upon clicking 'recommend' will display book details page for rec
 ### Contribution Guidelines
 > - Better filtering of results to remove repeat books or books that don't have image/title/authors/etc
 - Refining the book recommendation algorithm
+- Remove books from selected books list (Can remove the book from array but images won't rerender)
