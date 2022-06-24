@@ -124,11 +124,6 @@
       }
 ```
 
-## Visual of your component hierarchy
->
-<img width="756" alt="Screen Shot 2022-06-16 at 10 14 35 PM" src="https://user-images.githubusercontent.com/104743186/174211350-17355128-73b5-4b7a-ac9d-1d53677a1f17.png">
-
-
 ## Wire Frames
 > 
 Homepage

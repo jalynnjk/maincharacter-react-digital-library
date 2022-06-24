@@ -5,6 +5,11 @@
   font-weight: normal;
   src: url('./assets/Sunroll.ttf')
 }
+@media screen and (max-width:600px) {
+  .selected-book-img {
+    max-width: 125px;
+  }
+}
 body {
   font-family: 'Times New Roman';
   text-align: center;
