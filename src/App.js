@@ -10,7 +10,7 @@ function App() {
 		<div>
 			<Header />
 			<Routes>
-				<Route path='/search/*' element={<SearchBar />} />
+				<Route path='/*' element={<SearchBar />} />
 				<Route path='/details/:id' element={<BookDetails />} />
 				<Route
 					path='/book-recommendation/:discoverGenres'

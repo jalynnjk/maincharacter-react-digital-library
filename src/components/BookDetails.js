@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function BookDetails(props) {
@@ -22,6 +22,7 @@ function BookDetails(props) {
 
 	return (
 		<div>
+			<Link to='/'><button>Return</button></Link>
 			{bookData.title ? (
 				<div>
 					<img src={bookData.imageLinks.smallThumbnail} alt='' />

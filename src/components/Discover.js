@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
-import BookRecommendation from './BookRecommendation';
+import { Link } from 'react-router-dom';
 
 function Discover({ selectedBooks }) {
     const [discoverGenres, setDiscoverGenres] = useState([])
@@ -23,16 +22,13 @@ function Discover({ selectedBooks }) {
 								src={selectedBook.volumeInfo.imageLinks.smallThumbnail}
 								alt=''
 							/>
-							<h2 className='selected-book-title' key={index}>
-								{selectedBook.volumeInfo.title}
-							</h2>
 						</div>
 					);
 				})}
 			</div>
 			{selectedBooks.length ? (
 				<Link to={`/book-recommendation/${discoverGenres}`}>
-					<button>Recommend</button>
+					<button className='recommend-button'>disCOver</button>
 				</Link>
 			) : null}
 		</div>
