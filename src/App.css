@@ -78,16 +78,18 @@ h1 {
   border-bottom: #edede9 1px solid;
   border-top: #edede9 1px solid;
   padding: 5px;
-  height: 200px;
+  height: 225px;
 }
 .card-container {
   display: grid;
   width: 100%;
   grid-template-columns: 2fr .5fr 2fr;
   grid-template-rows: 1fr 1fr 1fr;
+  margin-top: 10px;
 }
 .sr-img  {
   border-radius: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
 }
 .sr-body {
   margin-top: 5%;
@@ -132,6 +134,7 @@ h1 {
 .selected-book-img {
   height: 190px;
   border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
 }
 .recommend-button {
   background-color: #edede9;
@@ -139,4 +142,38 @@ h1 {
   font-family: 'Sunroll';
   border: black 1px solid;
   border-radius: 5%;
+}
+.details-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'times new roman';
+}
+.return-button {
+  border: none;
+  background-color: white;
+  color: #6d6875;
+  font-family: 'times-new-roman';
+  font-size: 15px;
+  border-left: 1px solid #6d6875;
+  border-right: 1px solid #6d6875;
+  margin: 5px;
+  padding: 0px 5px 0px 5px;
+}
+.book-details {
+  margin: 15px;
+}
+.book-image {
+  border-radius: 5%;
+  height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.book-title {
+  font-family: 'times new roman';
+  font-style: italic;
+}
+.book-titles-container {
+  margin: 10px;
+  border-top: 1px solid #edede9;
+  border-bottom: 1px solid #edede9;
+  padding: 10px;
 }
