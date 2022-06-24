@@ -3,7 +3,9 @@
 
 ## Application Link
 > [Main Character React Application](https://maincharacter-digital-library.netlify.app/)
+
 ## Application Screenshot
+> <img width="414" alt="Screen Shot 2022-06-24 at 12 54 00 AM" src="https://user-images.githubusercontent.com/104743186/175465115-f28f2e71-1592-4b43-b388-cd19e584855e.png">
 
 ## Technologies
 > Include: HTML, CSS, JavaScript, React, React Router, React Bootstrap
