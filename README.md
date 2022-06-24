@@ -5,7 +5,7 @@
 > [Main Character React Application](https://maincharacter-digital-library.netlify.app/)
 
 ## Application Screenshot
-> <img width="414" alt="Screen Shot 2022-06-24 at 12 54 00 AM" src="https://user-images.githubusercontent.com/104743186/175465115-f28f2e71-1592-4b43-b388-cd19e584855e.png">
+<img width="414" alt="Screen Shot 2022-06-24 at 12 54 00 AM" src="https://user-images.githubusercontent.com/104743186/175465115-f28f2e71-1592-4b43-b388-cd19e584855e.png">
 
 ## Technologies
 > Include: HTML, CSS, JavaScript, React, React Router, React Bootstrap
@@ -147,7 +147,7 @@ Discovery Page (upon clicking 'recommend' will display book details page for rec
 - I want the ability to be shown books based on their similarity to other books... so that I can find new books I may be interested in reading
 
 ### MVP Goals
-> - Upon loading, search results will display books
+- Upon loading, search results will display books
 - Search bar that can take user input and update displayed book results
 - If author name is clicked on will generate new search results based on the author
 - Book details page will open when a book image or title is clicked on
@@ -157,6 +157,6 @@ Discovery Page (upon clicking 'recommend' will display book details page for rec
 - Recommendation is made based on similarity to the books added to the discover slots
 
 ### Contribution Guidelines
-> - Better filtering of results to remove repeat books or books that don't have image/title/authors/etc
+- Better filtering of results to remove repeat books or books that don't have image/title/authors/etc
 - Refining the book recommendation algorithm
 - Remove books from selected books list (Can remove the book from array but images won't rerender)
