@@ -2,11 +2,12 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-function Discover({ selectedBooks }) {
+function Discover({ selectedBooks, setSelectedBooks }) {
     const [discoverGenres, setDiscoverGenres] = useState([])
     useEffect(() => {
         if (selectedBooks.length >= 1){
-        selectedBooks.map((selectedBook) => {	
+        selectedBooks.map((selectedBook) => {
+            selectedBook.volumeInfo.categories == undefined ? setDiscoverGenres(discoverGenres):
             setDiscoverGenres([...discoverGenres, ...selectedBook.volumeInfo.categories])
 			})}
     }, [selectedBooks])
@@ -15,7 +16,7 @@ function Discover({ selectedBooks }) {
 		<div className='discover-container'>
 			<div className='selected-book-list-container'>
 				{selectedBooks.map((selectedBook, index) => {
-					return (
+                    return (
 						<div className='selected-book-container' key={index}>
 							<img
 								className='selected-book-img'
