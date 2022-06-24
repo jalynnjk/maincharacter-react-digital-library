@@ -1,6 +1,15 @@
 ## Project Description 
 > I would like to build the front-end for a digital library using the Google Books API. Users can input keywords for books that will call the Google Books API and render data matching their search. They will be able to view their search results and then click on specific books to view more details. 
 
+## Technologies
+> Include: HTML, CSS, JavaScript, React, React Router, React Bootstrap
+
+## Installation Instructions
+> You can fork this repo and use the SSH code to clone into your terminal
+
+## Getting Started
+> Upon opening the application it will automatically load search results for the genre 'fiction'. You can either click from the quick search taps or use the search form to pull up more results on different topics. You can click on the book image or title to go to the book details page, or you can click on the author name to generate a search for books written by authors of the same name. Clicking on the + for each book will add it to the discover section, this section allows for a max of three books and upon clicking the 'discover' button will generate a book details page for a book randomly chosen based off the genres of the books added to the discover section. To return to the search page you can either press the header title or the return button. 
+
 ## Link to the API you plan to use
 > [API link](https://developers.google.com/books/docs/overview)
 
@@ -137,15 +146,15 @@ Discovery Page (upon clicking 'recommend' will display book details page for rec
 - I want the ability to be shown books based on their similarity to other books... so that I can find new books I may be interested in reading
 
 ### MVP Goals
-- Upon loading, search results will display books based on randomly generated search
-- If the search tab is clicked the page will display a search bar that can take user input and update displayed book results
-- Infinite scroll feature that will continue to display further results as the user scrolls down
+> - Upon loading, search results will display books
+- Search bar that can take user input and update displayed book results
 - If author name is clicked on will generate new search results based on the author
 - Book details page will open when a book image or title is clicked on
 - Book details page will display book image (if one exists), title, and author(s), genres, and descriptions
 - If the discovery tab is clicked the page will display three slots that user can add books to from their search results
-- If the user clicks 'recommend' the page will open to the book details page of recommended book
+- If the user clicks 'discover' the page will open to the book details page of recommended book
 - Recommendation is made based on similarity to the books added to the discover slots
 
-### Stretch Goals
-- Create a database to store user information for the purpose of allowing users to add books to their library
+### Contribution Guidelines
+> - Better filtering of results to remove repeat books or books that don't have image/title/authors/etc
+- Refining the book recommendation algorithm
