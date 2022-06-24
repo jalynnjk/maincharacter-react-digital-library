@@ -3,20 +3,25 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Discover({ selectedBooks, setSelectedBooks }) {
-    const [discoverGenres, setDiscoverGenres] = useState([])
-    useEffect(() => {
-        if (selectedBooks.length >= 1){
-        selectedBooks.map((selectedBook) => {
-            selectedBook.volumeInfo.categories == undefined ? setDiscoverGenres(discoverGenres):
-            setDiscoverGenres([...discoverGenres, ...selectedBook.volumeInfo.categories])
-			})}
-    }, [selectedBooks])
+	const [discoverGenres, setDiscoverGenres] = useState([]);
+	useEffect(() => {
+		if (selectedBooks.length >= 1) {
+			selectedBooks.map((selectedBook) => {
+				selectedBook.volumeInfo.categories == undefined
+					? setDiscoverGenres(discoverGenres)
+					: setDiscoverGenres([
+							...discoverGenres,
+							...selectedBook.volumeInfo.categories,
+					  ]);
+			});
+		}
+	}, [selectedBooks]);
 
 	return (
 		<div className='discover-container'>
 			<div className='selected-book-list-container'>
 				{selectedBooks.map((selectedBook, index) => {
-                    return (
+					return (
 						<div className='selected-book-container' key={index}>
 							<img
 								className='selected-book-img'
@@ -28,7 +33,7 @@ function Discover({ selectedBooks, setSelectedBooks }) {
 				})}
 			</div>
 			{selectedBooks.length ? (
-				<Link to={`/book-recommendation/${discoverGenres}`}>
+				<Link className='recommend-link' to={`/book-recommendation/${discoverGenres}`}>
 					<button className='recommend-button'>disCOver</button>
 				</Link>
 			) : null}

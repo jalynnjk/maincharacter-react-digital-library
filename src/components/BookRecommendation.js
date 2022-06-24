@@ -8,13 +8,14 @@ function BookRecommendation(props) {
 	useEffect(() => {
 		let genresArray = discoverGenres.split(',');
 		const randomGenreIndex = Math.floor(Math.random() * genresArray.length);
-		const url = `https://www.googleapis.com/books/v1/volumes?q=subject:${genresArray[randomGenreIndex]}&maxResults=4`;
-		// key=${process.env.REACT_APP_API_KEY}
+		const url = `https://www.googleapis.com/books/v1/volumes?q=subject:${genresArray[randomGenreIndex]}&maxResults=4&key=${process.env.REACT_APP_API_KEY}`
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
-				const randomBookIndex = Math.floor(Math.random() * res.items.length);
-				setRecommendation(res.items[randomBookIndex]);
+				const randomBookIndex = Math.floor(
+					Math.random() * (res.items.length - 1)
+				);
+				setRecommendation(res.items[randomBookIndex].volumeInfo);
 			})
 			.catch(console.error);
 	}, []);
@@ -28,38 +29,31 @@ function BookRecommendation(props) {
 			<Link className='return-link' to='/'>
 				<button className='return-button'>Return</button>
 			</Link>
-			{recommendation.volumeInfo ? (
+			{recommendation.title ? (
 				<div className='book-details'>
-					{recommendation.volumeInfo.imageLinks.smallThumbnail ? (
-						<img
-							className='book-image'
-							src={recommendation.volumeInfo.imageLinks.smallThumbnail}
-							alt='Book Cover'
-						/>
-					) : (
-						<h4 className='book-image'>No Image Available</h4>
-					)}
+					<img
+						className='book-image'
+						src={recommendation.imageLinks.smallThumbnail}
+						alt='Book Cover'
+					/>
 					<div className='book-titles-container'>
-						{recommendation.volumeInfo.title ? (
-							<h2>{recommendation.volumeInfo.title}</h2>
+						<h2 className='book-title'>{recommendation.title}</h2>
+						{recommendation.authors ? (
+							<h2 className='book-authors'>
+								{recommendation.authors.join(', ')}
+							</h2>
 						) : (
-							<h2>Title Unknown</h2>
-						)}
-						{recommendation.volumeInfo.authors ? (
-							<h3>{recommendation.volumeInfo.authors.join(', ')}</h3>
-						) : (
-							<h3>Author(s) Unknown</h3>
+							<h2>Author Unknown</h2>
 						)}
 					</div>
-					{recommendation.volumeInfo.description ? (
-						<div
-							dangerouslySetInnerHTML={createMarkup(
-								recommendation.volumeInfo.description
-							)}></div>
-					) : null}
+					<div
+						className='book-description'
+						dangerouslySetInnerHTML={createMarkup(
+							recommendation.description
+						)}></div>
 				</div>
 			) : (
-				<h2>Book loading...</h2>
+				<h2>Book details loading...</h2>
 			)}
 		</div>
 	);
